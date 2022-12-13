@@ -1,67 +1,61 @@
-mat-toolbar {
-    background: #004a9f;
-    color: white;
+.navbar.navbar-dark .navbar-nav .nav-item .nav-link {
+  color: black;
+  font-weight: 500;
+  border-top: 1px solid #d9d9d9d9;
+  border-bottom: 1px solid #d9d9d9d9;
 }
 
-mat-sidenav {
-    margin: 16px;
-    width: 200px;
-    border-right: none;
-    background: #002b5c;
-    color: white;
-    border-radius: 10px;
-    padding: 16px;
-    text-align: center;
+.navbar.navbar-dark .navbar-nav .nav-item .nav-link:hover {
+  color: yellow;
+  border-top: 1px solid yellow;
+  border-bottom: 1px solid yellow;
 }
 
-.content {
-    height: calc(100vh - 98px);
-    border-radius: 10px;
-    margin: 16px;
-    margin-left: 32px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    font-size: 2rem;
-    color: lightgray;
+.nga-navbar {
+  -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16),
+    0 11px 10px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 11px 10px 0 rgba(0, 0, 0, 0.12);
+  background-color: #d9d9d9d9;
 }
 
-mat-sidenav-container {
-    height: calc(100vh - 65px);
+.nga-navbar-logo {
+  font-weight: 700;
 }
 
-.menu-button {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    font-size: 1rem;
+.nga-navbar-logo:hover {
+  color: rgba(255, 255, 255, 0.75);
 }
-    mat-icon {
-        margin-right: 8px;
-    }
 
-    .avatar {
-        margin-top: 16px;
-        width: 100px;
-        height: 100px;
-        border-radius: 50%;
-    }
-    
-    .name {
-        margin-top: 8px;
-        font-weight: normal;
-    }
-    .designation {
-        margin-top: 2px;
-        font-size: 0.7rem;
-        color: lightgrey;
-    }
-    
-    mat-divider {
-        margin-top: 16px;
-        margin-bottom: 16px;
-        background-color: rgba(255, 255, 255, 0.5);
-    }
+.nga-logo {
+  font-weight: 700;
+    color: black;
+
+}
+
+.nga-logo:hover {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.nga-footer {
+  background-color: #212121;
+  color: white;
+}
+
+.nga-footer a {
+  color: white;
+  text-decoration: none;
+}
+
+.nga-footer a:hover,
+.nga-footer a:focus {
+  color: yellow;
+  text-decoration: underline;
+}
+
+.nga-footer .hint {
+  background-color: #1976d2;
+}
+
+.nga-footer .hint:hover {
+  opacity: 0.8;
+}

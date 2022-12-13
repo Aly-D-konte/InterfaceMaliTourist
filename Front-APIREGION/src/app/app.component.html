@@ -1,45 +1,73 @@
-<mat-toolbar>
-    <button mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
-        <mat-icon *ngIf="!sidenav.opened">
-            menu
-        </mat-icon>
-        <mat-icon *ngIf="sidenav.opened">
-            close
-        </mat-icon>
+<header class="navbar navbar-expand-md navbar-dark fixed-top nga-navbar">
+  <nav class="container" aria-label="Main navigation">
+    <a routerLink="/" class="navbar-brand" alt="Accueil" aria-label="Ganatan">
+     
+      <span class="nga-logo mx-1 ">Mali Tourist</span>
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarCollapse"
+      aria-controls="navbarCollapse"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
     </button>
-    Responsive side navigation
-</mat-toolbar>
-
-<mat-sidenav-container>
-    <mat-sidenav #sidenav="matSidenav"  class="content mat-elevation-z8">
-        <img class="avatar mat-elevation-z8" src="https://source.unsplash.com/c_GmwfHBDzk/200x200" />
-        <h4 class="name">John Smith</h4>
-        <p class="designation">Software Engineer</p>
-
-        <mat-divider></mat-divider>
-        <button mat-button class="menu-button">
-            <mat-icon>home</mat-icon>
-            <span>Home</span>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" routerLink="/">
+            <i class="fas fa-home me-1"></i>Accueil</a
+          >
+        </li>
+      </ul>
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="/about">
+            <i class="far fa-question-circle me-1"></i>Region</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" routerLink="/contact">
+            <i class="fas fa-envelope me-1"></i>Contact</a
+          >
+        </li>
+      </ul>
+      <form class="d-flex">
+        <button
+          type="button"
+          class="btn btn-sm btn-primary me-2"
+          routerLink="/signup"
+        >
+          <i class="fas fa-user-plus me-2"></i>Sign up
         </button>
-        <button mat-button class="menu-button">
-            <mat-icon>person</mat-icon>
-            <span>Profile</span>
+        <button
+          type="button"
+          class="btn btn-sm btn-outline-light me-2"
+          routerLink="/login"
+        >
+          <i class="fas fa-sign-in-alt me-2"></i>Login
         </button>
-        <button mat-button class="menu-button">
-            <mat-icon>info</mat-icon>
-            <span>About</span>
-        </button>
+      </form>
+    </div>
+  </nav>
+</header>
 
-        <mat-divider></mat-divider>
+<main>
+  <router-outlet></router-outlet>
+</main>
 
-        <button mat-button class="menu-button">
-            <mat-icon>help</mat-icon>
-            <span>Help</span>
-        </button>
-    </mat-sidenav>
-    <mat-sidenav-content>
-        <div class="content mat-elevation-z8">
-            Main content here!
-        </div>
-    </mat-sidenav-content>
-</mat-sidenav-container>
+<footer class="nga-footer">
+  <div class="py-3 text-center" style="background-color: black">
+    <div class="container">
+      <p>
+        <span>Mali Tourist |</span> Copyright &copy; 2022 Mali | Tous droits
+        réservés 
+        <i class="fa fa-whatsapp" aria-hidden="true"></i>
+
+      </p>
+    </div>
+  </div>
+</footer>
