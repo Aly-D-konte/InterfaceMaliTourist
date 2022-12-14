@@ -1,18 +1,19 @@
 <div class="container">
     <div class="tour">
-    <img class="t" src="assets/visite.jpg" alt="Tourisme Mali" />
+        <img class="mx-auto d-block" src="assets/mali.jpg"  alt="Tourisme Mali" />
+
+      </div>
     <h2>
       Berceau des grands empires et royaumes d’Afrique de l’Ouest, le Mali riche
       de son passé glorieux constitue une des destinations touristiques les plus
       prisées de l’espace CEDEAO grâce notamment à la richesse et à la diversité
       de ses ressources touristiques.
     </h2>
-  </div>
   <h2 class="text-center">Contact</h2>
 
   <div class="row">
     
-    <div class="col-12 col-md-6 col-lg-4 text-center ">
+    <div class="col-12 col-md-6 col-lg-4 text-center contact">
       <!--La classe bg-info ajoute un fond bleu à l'élément-->
        <div class="col-12 col-md-6 mb-2  pt-2">
         <p><i class="fa fa-phone" aria-hidden="true"></i></p>
@@ -23,14 +24,14 @@
        76621307
       </h4>
       </div>
+
         <div class="col-12 col-md-6 pt-2">
           <i class="fa fa-envelope" aria-hidden="true"></i>
 
         <h4 class="mail">
         Email
       </h4 >
-          <h4 class="email"><a href="alykonte19@gmail.com " target="_blank">        alykonte19@gmail.com
-</a>
+          <h4 class="email"><a href="alykonte19@gmail.com " target="_blank">alykonte19@gmail.com</a>
       </h4>
       </div>
       
@@ -40,33 +41,82 @@
       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62277.94218311676!2d-7.9233950800809785!3d12.689165885444407!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xe51d4b4ace4eac9%3A0xfd5a4675b87565a6!2sMoribabougou!5e0!3m2!1sfr!2sml!4v1670969842455!5m2!1sfr!2sml" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
   </div>
- <div class="row">
+
+
+
+
+<!--Section: Contact v.2-->
+<section class="col-12 mb-4 py-5">
+
   <h3 class="mb-2 text-center mail">ENVOYEZ UN MAIL</h3>
-  <div class="col-8 ">
-    <div id="after_submit"></div>
-<form id="contact_form" action="#" method="POST" enctype="multipart/form-data">
+
+
   <div class="row">
-    <div class="col-12 col-md-6">
-        <label class="required" for="name">Nom:</label>
-    <input id="name" class="input" name="name" type="text" value="" size="30" /><br />
-    <span id="name_validation" class="error_message"></span>
-  
-    </div>
-  <div class="col-12 col-md-6">
-<label class="required" for="email">Email:</label>
-    <input id="email" class="input" name="email" type="text" value="" size="30" /><br />
-    <span id="email_validation" class="error_message"></span>
-  </div>
+
+      <!--Grid column-->
+      <div class="col-12 col-md-9 mb-md-0 mb-5 ">
+          <form id="contact-form" name="contact-form" action="mail.php" method="POST">
+
+              <!--Grid row-->
+              <div class="row">
+
+                  <!--Grid column-->
+                  <div class="col-12 col-md-6">
+                      <div class="md-form mb-0 form-floating">
+                          <input type="text" id="name" name="name" class="form-control">
+                          <label for="name" class="">Nom</label>
+                      </div>
+                  </div>
+                  <!--Grid column-->
+
+                  <!--Grid column-->
+                  <div class=" col-12 col-md-6">
+                      <div class="md-form mb-0 form-floating">
+                          <input type="text" id="email" name="email" class="form-control">
+                          <label for="email" class="">Email</label>
+                      </div>
+                  </div>
+                  <!--Grid column-->
+
+              </div>
+             
+              <!--Grid row-->
+
+              <!--Grid row-->
+              <div class="row">
+
+                  <!--Grid column-->
+                  <div class="col-12 col-md-12 p-4">
+
+                      <div class="md-form form-floating">
+                          <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea"></textarea>
+                          <label for="message">Message</label>
+                      </div>
+
+                  </div>
+              </div>
+              <!--Grid row-->
+
+          </form>
+
+          <div class="text-center text-md-left">
+              <a class="btn btn-primary" onclick="document.getElementById('contact-form').submit();">Envoyer</a>
+          </div>
+          <div class="status"></div>
+      </div>
+      <!--Grid column-->
+
+      <!--Grid column-->
     
+      <!--Grid column-->
+
   </div>
-  <div class="row">
-    <label class="required" for="message">Message:</label><br />
-    <textarea id="message" class="input" name="message" rows="7" cols="30"></textarea><br />
-    <span id="message_validation" class="error_message"></span>
-  </div>
-    
-    <input id="submit_button" type="submit" value="Envoyer" />
-</form>
-  </div>
- </div>
+
+</section>
+<!--Section: Contact v.2-->
+
+
+
+
+ 
 </div>
