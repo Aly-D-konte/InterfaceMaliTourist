@@ -1,4 +1,16 @@
-.t {
+.myimg{
+  box-sizing: border-box;
   background-size: cover;
-  height: 650 px;
+  padding: 10px;
+}
+.myimg img{
+  width: auto;
+  height: 350px;
+}
+
+@media only screen and (max-width: 767px) {
+  img{
+    width: auto;
+    height: 200px;
+  }
 }
