@@ -11,7 +11,7 @@
   
   .images-sect{
     height: 60vh;
-    background-image: url('/assets/mali.jpg ');
+    background-image: url('/assets/mali.png ');
     background-repeat: no-repeat;
     width: 100%;
     background-size: cover;
@@ -30,3 +30,23 @@
     background-size: cover;
     width: 100%;
   }
+  a{
+    text-decoration: none;
+    color: black;
+  }
+
+  .region{
+    font-weight: bold;
+    margin-top: 30px;
+    font-size: 40px;
+  }
+  /* button{
+    width: 100px;
+    align-items: center;
+    margin-left: 111px;
+    background-color: #D9D9D9;
+  }
+  button:hover{
+    background-color: #009A4E;
+    color: #D9D9D9;
+  } */
