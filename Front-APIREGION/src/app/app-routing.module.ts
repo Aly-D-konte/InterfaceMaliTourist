@@ -14,6 +14,7 @@ const routes: Routes = [
     path: 'detail',
     component: DetailRegionComponent,
   },
+
   {
     path: 'connexion',
     component: ConnexionComponent,
