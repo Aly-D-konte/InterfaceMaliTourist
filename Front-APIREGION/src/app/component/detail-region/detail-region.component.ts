@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { RegionService } from 'src/app/services/region.service';
 
 @Component({
   selector: 'app-detail-region',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetailRegionComponent implements OnInit {
 
-  constructor() { }
+regions: any;
+
+  constructor(private serviceregion: RegionService, private routes: ActivatedRoute,
+    private router : Router) { }
 
   ngOnInit(): void {
+
+     // afficher le detail de la region
+      const id = this.routes.snapshot.params['id_regions']
+     this.serviceregion.detailregion(id).subscribe(data=>{
+    
+      this.regions = data
+      console.log("Afficher le detail de la  " +this.regions);
+    })
   }
+ 
 
 }

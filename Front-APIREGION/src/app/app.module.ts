@@ -10,12 +10,16 @@ import { ContactComponent } from './component/contact/contact.component';
 import { RegionComponent } from './component/region/region.component';
 import { InscriptionComponent } from './Compte/inscription/inscription.component';
 import { ConnexionComponent } from './Compte/connexion/connexion.component';
+import { FormsModule } from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
 @NgModule({
   declarations: [AppComponent, HomeComponent, DetailRegionComponent, ContactComponent, RegionComponent, ConnexionComponent, InscriptionComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    FormsModule,
+    HttpClientModule
     
   ],
   providers: [],

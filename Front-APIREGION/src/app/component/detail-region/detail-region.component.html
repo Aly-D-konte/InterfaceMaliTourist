@@ -1,12 +1,9 @@
-<div class="container">
-  <div class="tour">
+<div class="container" *ngFor="let region of regions">
+  <div class="tour" >
     <img src="assets/mali.png" class="mx-auto d-block" alt="kayes" />
 
     <h2>
-      Berceau des grands empires et royaumes d’Afrique de l’Ouest, le Mali riche
-      de son passé glorieux constitue une des destinations touristiques les plus
-      prisées de l’espace CEDEAO grâce notamment à la richesse et à la diversité
-      de ses ressources touristiques.
+      {{region.description}}
     </h2>
 
   </div>
@@ -19,8 +16,8 @@
       <div class="col-md-6">
         <div class="superficie">
           <p><span>Population</span> : 158 493 hab. (2021)</p>
-          <p><span>Superficie</span> : 2 219 000 ha = 22 190 km2</p>
-          <p><span>Langues parlées</span> :Soninké, Khassonkés, Malinkés, Maures, Peuls et Bambara.</p>
+          <p><span>Superficie</span> {{region.superficieregion}}</p>
+          <p><span>Langues parlées</span>{{region.languemregion}}</p>
         </div>
       </div>
       <div class="col-md-6">
@@ -31,7 +28,7 @@
     </div>
   </div>
   
-  <div class="container">
+  <!-- <div class="container">
     <h2 class="site text-center">Quelques site de tourisme de kayes</h2>
 
     <div class="row">
@@ -148,5 +145,5 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
 </div>

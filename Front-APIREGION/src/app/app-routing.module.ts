@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
 
   {
-    path: 'detail',
+    path: 'detail/:id_regions',
     component: DetailRegionComponent,
   },
 

@@ -44,56 +44,23 @@
  
 <h2 class="region text-center">Les Régions du Mali</h2>
   <div class="row">
-    <div class="col-12 col-md-4 col-lg-4 text-center mb-2">
+    <div class="col-12 col-md-4 col-lg-4 text-center mb-2" *ngFor="let region of regions">
       <div class="card">
-        <div class="images-sect"> </div>
-        <h2 class="titre">Bamako</h2>
+        <div class="images-sect" style=" background-image: url('{{region.images}}');
+        "> {{region.images}}</div>
+        <h2 class="titre">{{region.nomregions}}</h2>
         <div class="para">
           <p>
-            La région de Kayes est une des plus belles régions du Mali.
-            Paradoxalement, cette partie du pays est très peu fréquentée par les
-            touristes.
+           {{region.description}}
           </p>
         </div>
-        <button><a routerLink="/detail">Decouvrir</a> </button>
+        <button ><a [routerLink]="['/detail',region.id_regions]">Decouvrir</a> </button>
 
       </div>
      
    
     </div>
-    <div class="col-12 col-md-4 col-lg-4 text-center mb-2">
-      <div class="card">
-        <div class="images-sect"> </div>
-        <h2 class="titre">Bamako</h2>
-        <div class="para">
-          <p>
-            La région de Kayes est une des plus belles régions du Mali.
-            Paradoxalement, cette partie du pays est très peu fréquentée par les
-            touristes.
-          </p>
-        </div>
-        <button><a routerLink="/detail">Decouvrir</a> </button>
-
-      </div>
-     
-   
-    </div>
-    <div class="col-12 col-md-4 col-lg-4 text-center mb-2">
-      <div class="card">
-        <div class="images-sect"> </div>
-        <h2 class="titre">Bamako</h2>
-        <div class="para">
-          <p>
-            La région de Kayes est une des plus belles régions du Mali.
-            Paradoxalement, cette partie du pays est très peu fréquentée par les
-            touristes.
-          </p>
-        </div>
-        <button><a routerLink="/detail">Decouvrir</a> </button>
-      </div>
-     
-   
-    </div>
+    
     
   </div>
 
