@@ -6,15 +6,16 @@ import { HomeComponent } from './component/home/home.component';
 import { RegionComponent } from './component/region/region.component';
 import { ConnexionComponent } from './Compte/connexion/connexion.component';
 import { InscriptionComponent } from './Compte/inscription/inscription.component';
+import { ProfileComponent } from './Compte/profile/profile.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
-
+  { path: 'accueil', component: HomeComponent },
+  { path: '', redirectTo: 'accueil', pathMatch: 'full' },
   {
     path: 'detail/:id_regions',
     component: DetailRegionComponent,
   },
-
+  
   {
     path: 'connexion',
     component: ConnexionComponent,
@@ -22,6 +23,10 @@ const routes: Routes = [
   {
     path: 'inscription',
     component: InscriptionComponent,
+  },
+  {
+    path: 'profile',
+    component: ProfileComponent,
   },
   
   {

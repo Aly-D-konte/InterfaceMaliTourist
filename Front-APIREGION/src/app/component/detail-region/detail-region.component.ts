@@ -17,11 +17,11 @@ regions: any;
   ngOnInit(): void {
 
      // afficher le detail de la region
-      const id = this.routes.snapshot.params['id_regions']
-     this.serviceregion.detailregion(id).subscribe(data=>{
+      const idre = this.routes.snapshot.params['id_regions']
+     this.serviceregion.detailregion(idre).subscribe(data=>{
     
       this.regions = data
-      console.log("Afficher le detail de la  " +this.regions);
+      console.log("Afficher le detail de la  " + this.regions);
     })
   }
  

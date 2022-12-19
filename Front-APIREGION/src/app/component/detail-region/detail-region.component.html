@@ -1,9 +1,11 @@
-<div class="container" *ngFor="let region of regions">
+<div class="container" >
   <div class="tour" >
     <img src="assets/mali.png" class="mx-auto d-block" alt="kayes" />
 
+
     <h2>
-      {{region.description}}
+
+      {{regions.description}}
     </h2>
 
   </div>
@@ -15,9 +17,9 @@
     <div class="row">
       <div class="col-md-6">
         <div class="superficie">
-          <p><span>Population</span> : 158 493 hab. (2021)</p>
-          <p><span>Superficie</span> {{region.superficieregion}}</p>
-          <p><span>Langues parlées</span>{{region.languemregion}}</p>
+          <p><span>Population: </span> {{regions.Population}}</p>
+          <p><span>Superficie: </span> {{regions.superficieregion}}</p>
+          <p><span>Langues parlées: </span> {{regions.languemregion}}</p>
         </div>
       </div>
       <div class="col-md-6">

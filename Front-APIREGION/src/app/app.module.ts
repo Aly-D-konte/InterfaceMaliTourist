@@ -12,8 +12,12 @@ import { InscriptionComponent } from './Compte/inscription/inscription.component
 import { ConnexionComponent } from './Compte/connexion/connexion.component';
 import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { httpInterceptorProviders } from './_helpers/http.interceptor';
+import { ProfileComponent } from './Compte/profile/profile.component';
+
 @NgModule({
-  declarations: [AppComponent, HomeComponent, DetailRegionComponent, ContactComponent, RegionComponent, ConnexionComponent, InscriptionComponent],
+  declarations: [AppComponent, HomeComponent, DetailRegionComponent, ContactComponent, RegionComponent, ConnexionComponent, InscriptionComponent, DashboardComponent, ProfileComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -22,7 +26,7 @@ import {HttpClientModule} from '@angular/common/http';
     HttpClientModule
     
   ],
-  providers: [],
+  providers: [httpInterceptorProviders],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
