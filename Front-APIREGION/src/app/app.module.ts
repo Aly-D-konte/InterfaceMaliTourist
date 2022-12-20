@@ -13,7 +13,6 @@ import { ConnexionComponent } from './Compte/connexion/connexion.component';
 import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { httpInterceptorProviders } from './_helpers/http.interceptor';
 import { ProfileComponent } from './Compte/profile/profile.component';
 
 @NgModule({
@@ -23,10 +22,10 @@ import { ProfileComponent } from './Compte/profile/profile.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
     
   ],
-  providers: [httpInterceptorProviders],
+  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

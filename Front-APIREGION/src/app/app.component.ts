@@ -1,6 +1,4 @@
-import { Component, Inject, OnInit, PLATFORM_ID, ViewChild } from '@angular/core';
-import {MatSidenav} from '@angular/material/sidenav';
-import { BreakpointObserver } from '@angular/cdk/layout';
+import { Component, Inject,  PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { AuthService } from './services/authentification/auth.services';
 import { StorageService } from './services/authentification/stockage.service';
@@ -70,4 +68,20 @@ export class AppComponent {
       }
     }
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
 }

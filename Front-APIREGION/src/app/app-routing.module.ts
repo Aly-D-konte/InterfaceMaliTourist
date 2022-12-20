@@ -7,6 +7,7 @@ import { RegionComponent } from './component/region/region.component';
 import { ConnexionComponent } from './Compte/connexion/connexion.component';
 import { InscriptionComponent } from './Compte/inscription/inscription.component';
 import { ProfileComponent } from './Compte/profile/profile.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 const routes: Routes = [
   { path: 'accueil', component: HomeComponent },
@@ -19,6 +20,10 @@ const routes: Routes = [
   {
     path: 'connexion',
     component: ConnexionComponent,
+  },
+  {
+    path: 'admin',
+    component: DashboardComponent,
   },
   {
     path: 'inscription',

@@ -8,7 +8,7 @@ import { Pays } from '../models/pays.model';
 })
 export class PaysService {
 //lien de principal de la region du backend
-baseurl = 'http://localhost:8080/Pays/liste';
+baseurl = 'http://localhost:8080/api/pays/liste';
 
   constructor(private http : HttpClient) { }
   
