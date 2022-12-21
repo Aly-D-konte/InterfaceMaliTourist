@@ -5,9 +5,9 @@ export class Region {
     coderegion?:string;
     activiterregion?: string;
     superficieregion?:String;
-    languemregion?:String;
+    languemregion?: String;
 
-    images?:String;
+    // images!:File;
     description?:String;
     nombrecommentaire?: any
 

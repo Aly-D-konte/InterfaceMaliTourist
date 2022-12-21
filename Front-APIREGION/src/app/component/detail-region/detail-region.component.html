@@ -1,11 +1,11 @@
 <div class="container" >
-  <div class="tour" >
+  <div class="tour"  *ngFor="let r of regions">
     <img src="assets/mali.png" class="mx-auto d-block" alt="kayes" />
 
 
     <h2>
 
-      {{regions.description}}
+      {{r.description}}
     </h2>
 
   </div>
@@ -14,12 +14,12 @@
 
   <div class="card ">
       
-    <div class="row">
+    <div class="row" *ngFor="let r of regions">
       <div class="col-md-6">
         <div class="superficie">
-          <p><span>Population: </span> {{regions.Population}}</p>
-          <p><span>Superficie: </span> {{regions.superficieregion}}</p>
-          <p><span>Langues parlées: </span> {{regions.languemregion}}</p>
+          <p><span>Population: </span> {{r.Population}}</p>
+          <p><span>Superficie: </span> {{r.superficieregion}}</p>
+          <p><span>Langues parlées: </span> {{r.languemregion}}</p>
         </div>
       </div>
       <div class="col-md-6">

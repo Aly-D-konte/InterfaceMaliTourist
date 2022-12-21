@@ -21,7 +21,7 @@ regions: any;
      this.serviceregion.detailregion(idre).subscribe(data=>{
     
       this.regions = data
-      console.log("Afficher le detail de la  " + this.regions);
+      console.log("Afficher le detail de  " + this.regions);
     })
   }
  

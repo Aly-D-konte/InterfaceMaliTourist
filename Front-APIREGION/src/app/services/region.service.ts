@@ -8,9 +8,9 @@ import { Region } from '../models/region.model';
 })
 export class RegionService {
 //lien de principal de la region du backend
-   liste = 'http://localhost:8080/Regions/liste';
-   detail = 'http://localhost:8080/Regions/detail';
-   ajout = 'http://localhost:8080/Regions/ajouterRegion';
+   liste = 'http://localhost:8080/api/region/liste';
+   detail = 'http://localhost:8080/api/region/detail';
+   ajout = 'http://localhost:8080/api/region/ajouterRegion';
 
   constructor(private http : HttpClient) { }
 
@@ -33,12 +33,21 @@ export class RegionService {
   }
 
 
-  //methode permettant d'ajouter une region
-  ajouterregion(coderegion:any): Observable<any>{
+  //this.region.nomregions, this.region.coderegion, this.region.activiterregion,  this.region.superficieregion, this.region.languemregion, this.region.description, this.region.images
 
+
+  //methode permettant d'ajouter une region
+  ajouterregion(nomregions:any, coderegion: any, activiterregion: any, superficieregion:any, languemregion:any, description :any, file :any): Observable<any>{
+console.log("languemregion  "+ languemregion +     + "description: " + description)
     const data:FormData = new FormData()
-    data.append('coderegion', coderegion);
-    
-    return this.http.post<Region>(`${this.ajout}`, data)
+    data.append('nomregions', nomregions );
+    data.append('coderegion', coderegion );
+    data.append('activiterregion', activiterregion );
+    data.append('superficieregion', superficieregion );
+    data.append('languemregion', languemregion );
+    data.append('description', description );
+    data.append('file', file );
+    console.log("my data : " +  data)
+    return this.http.post<Region>("http://localhost:8080/api/region/ajouterRegion", data)
   }
 }
