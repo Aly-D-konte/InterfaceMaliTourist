@@ -4,20 +4,21 @@
   }
   .card{
     background-color: #D9D9D9;
-    box-shadow: 12px 12px  rgba(0, 0, 255, .2);
+    box-shadow: 10px 8px  rgba(0, 0, 255, .2);
     background-size: cover;
     
   }
-  
-  .images-sect{
-    height: 60vh;
-    background-image: url('/assets/mali.png ');
-    background-repeat: no-repeat;
-    width: 100%;
-    background-size: cover;
-    margin: 0px !important;
-    background-position: center;
+
+  .btn{
+    box-shadow: 10px 8px  rgba(0, 0, 255, .2);
+    color: blue;
+
   }
+ .images{
+
+  height: 119px;
+  }
+ 
   .images-sect .titre{
   text-align: center;
   margin-top: 5%;

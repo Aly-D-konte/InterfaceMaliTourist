@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from 'src/app/models/user.model';
+import { AuthService } from 'src/app/services/authentification/auth.services';
 
 @Component({
   selector: 'app-inscription',
@@ -7,9 +9,51 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InscriptionComponent implements OnInit {
 
-  constructor() { }
+  //les attribues pour l'authentification
+  // nom!: string;
+  // email!: string;
+  // motdepass!: string;
+
+  form: any = {
+    username: null,
+    email: null,
+    password: null
+  };
+  isSuccessful = false;
+  isSignUpFailed = false;
+  errorMessage = '';
+  utilisateur! : User;
+
+  constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
   }
 
+  //button pour l'inscription
+
+  register(): void {
+    // console.log("-------------------------------------------")
+    
+    // let user = new User({
+    //   "username": this.nom,
+    //   "password": this.motdepass,
+    //   "useremail": this.email
+    // })
+    const { username, email, password } = this.form;
+    this.authService.register(username, email, password).subscribe({
+      // console.log("-------------------------------------------")
+      // this.utilisateur = data;
+      // console.table(data)
+      next: data => {
+        console.table(data);
+        this.isSuccessful = true;
+        this.isSignUpFailed = false;
+      },
+      error: err => {
+        this.errorMessage = err.error.message;
+        this.isSignUpFailed = true;
+      }
+    });
+
+  }
 }

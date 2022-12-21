@@ -1,0 +1,57 @@
+<div class="btn">
+  <a  data-bs-toggle="modal" href="#exampleModal" data-bs-whatever="@getbootstrap" class="btntu">Ajouter une région</a>
+</div>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header">
+<h5 class="modal-title" id="exampleModalLabel">Ajouter une Region</h5>
+<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+</div>
+<div class="modal-body">
+<form  (ngSubmit)="ajouerR()">
+  <div class="row justify-content-between text-left mb-3">
+      <div class="form-group col-sm-6 flex-column d-flex"> <label class="col-form-label">Code :</label> <input type="text" class="form-control" id="code"
+        name="code"
+        [(ngModel)]="region.coderegion"
+        > </div>
+      <div class="form-group col-sm-6 flex-column d-flex"> <label class="col-form-label">Nom :</label> <input type="text" class="form-control" id="nom"  name="code"
+        [(ngModel)]="region.nomregions"> </div>
+  </div>
+  <div class="row justify-content-between text-left mb-3">
+      <div class="form-group col-sm-6 flex-column d-flex"> <label class="col-form-label">Superficie :</label> <input type="text" class="form-control" id="superficie"  name="code"
+        [(ngModel)]="region.superficieregion"> </div>
+      <!-- <div class="form-group col-sm-6 flex-column d-flex"> <label class="col-form-label">Nombre d'Habitant :</label> <input type="text" class="form-control" id="habitant"  name="code"
+        [(ngModel)]="region.habitant"> </div> -->
+  </div>
+  <div class="row justify-content-between text-left mb-3">
+      <div class="form-group col-sm-6 flex-column d-flex"> <label class="col-form-label">Domaine d'Activité :</label> <input type="text" class="form-control" id="activite"  name="code"
+        [(ngModel)]="region.activiterregion"> </div>
+      <div class="form-group col-sm-6 flex-column d-flex"> <label class="col-form-label">Langue Majoritaire :</label> <input type="text" class="form-control" id="Langue"  name="languemregion"
+        [(ngModel)]="region.languemregion"> </div>
+  </div>
+<div class="mb-3">
+  <label for="recipient-name" class="col-form-label">Description :</label>
+  <input type="text" class="form-control" id="description"  [(ngModel)]="region.description" name="description">
+</div>
+<div class="mb-3">
+  <input type="file" class="custom-file-input" id="inputGroupFile01"
+    aria-describedby="inputGroupFileAddon01" name="file" formControlName="file"  (change)="fileChang($event)">
+  <label class="custom-file-label" for="inputGroupFile01" >Choisi une image</label>
+</div>
+<button type="submit" class="btn btn-primary"  >Ajouter</button>
+<button type="button" class="btn btn-secondary bt" data-bs-dismiss="modal">fermer</button>
+
+</form>
+
+</div>
+<div class="modal-footer">
+</div>
+</div>
+</div>
+</div>
+
+
+
