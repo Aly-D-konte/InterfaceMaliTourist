@@ -9,7 +9,8 @@ import { RegionService } from 'src/app/services/region.service';
 })
 export class DetailRegionComponent implements OnInit {
 
-regions: any;
+regions : any;
+idre:any;
 
   constructor(private serviceregion: RegionService, private routes: ActivatedRoute,
     private router : Router) { }
@@ -17,11 +18,13 @@ regions: any;
   ngOnInit(): void {
 
      // afficher le detail de la region
-      const idre = this.routes.snapshot.params['id_regions']
-     this.serviceregion.detailregion(idre).subscribe(data=>{
-    
+       this.idre = this.routes.snapshot.params['id_regions']
+       console.log("identeertyuiopppppppppppppppppppppp" + this.idre)
+
+     this.serviceregion.detailregion(this.idre).subscribe(data=>{
       this.regions = data
-      console.log("Afficher le detail de  " + this.regions);
+      console.log(this.regions)
+      console.table("Afficher le detail de  " + this.regions.languemregion);
     })
   }
  

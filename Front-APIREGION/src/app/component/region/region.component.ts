@@ -10,7 +10,9 @@ import { RegionService } from 'src/app/services/region.service';
 export class RegionComponent implements OnInit {
 
 
-  regions: any;
+  liste : any;
+
+  regions : any;
   images:string = "assets/images";
   constructor(private serviceregion: RegionService, private router : Router) { }
 
@@ -20,8 +22,8 @@ export class RegionComponent implements OnInit {
 
     this.serviceregion.getAll().subscribe(data=>{
       this.regions = data;
-      console.log("Afficher la  " +this.regions.languemregion);
-     console.log("abasse"+data);
+      console.log("La langue "+this.regions[0].languemregion);
+      console.log(data);
     })
   }
 

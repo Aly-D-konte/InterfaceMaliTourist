@@ -1,25 +1,24 @@
-<div class="container" >
-  <div class="tour"  *ngFor="let r of regions">
-    <img src="assets/mali.png" class="mx-auto d-block" alt="kayes" />
+
+<div class="container">
+  <div class="tour" >
+    <img src="../assets/images/{{regions.images}}" class="mx-auto d-block" alt="kayes" />
 
 
     <h2>
 
-      {{r.description}}
+      {{regions.description}}
     </h2>
 
   </div>
 
 
 
-  <div class="card ">
-      
-    <div class="row" *ngFor="let r of regions">
+  <div class="card"> 
+    <div class="row" >
       <div class="col-md-6">
         <div class="superficie">
-          <p><span>Population: </span> {{r.Population}}</p>
-          <p><span>Superficie: </span> {{r.superficieregion}}</p>
-          <p><span>Langues parlées: </span> {{r.languemregion}}</p>
+          <p>Superficie: {{regions.superficieregion}}</p>
+          <p><span>Langues parlées:{{regions.languemregion}} </span> </p>
         </div>
       </div>
       <div class="col-md-6">
@@ -81,7 +80,7 @@
      </div>
      
    </div>
-  </div>
+  </div>-->
 
 
   <section style="background-color: #eee;">
@@ -91,7 +90,7 @@
 
         <div class="col-md-12 col-lg-10 col-xl-8">
           <div class="card">
-            <h2 class="comment">Laisser un commentaire</h2>
+            <h2 class="comment">Laisser un commentaire </h2>
 
             <div class="card-body">
               <div class="d-flex flex-start align-items-center">
@@ -107,6 +106,7 @@
               </div>
   
               <p class="mt-3 mb-4 pb-2">
+                {{regions.languemregion}}
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
                 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
                 quis nostrud exercitation ullamco laboris nisi ut aliquip consequat.
@@ -127,6 +127,11 @@
                 </a>
               </div>
             </div>
+
+
+<!-- <p *ngFor="let moi of regions">Je suis</p> -->
+
+
             <div class="card-footer py-3 border-0" style="background-color: #f8f9fa;">
               <div class="d-flex flex-start w-100">
                 <img class="rounded-circle shadow-1-strong me-3"
@@ -147,5 +152,5 @@
         </div>
       </div>
     </div>
-  </section> -->
+  </section>
 </div>

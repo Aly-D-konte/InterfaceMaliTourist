@@ -39,7 +39,7 @@ export class ConnexionComponent implements OnInit {
   
           this.isLoginFailed = false;
           this.isLoggedIn = true;
-          this.route.navigateByUrl('/accueil');
+          this.route.navigateByUrl('/');
 
          this.roles = this.storageService.getUser().roles;
          this.reloadPage();
@@ -47,6 +47,7 @@ export class ConnexionComponent implements OnInit {
         error: err => {
           this.errorMessage = err.error.message;
           this.isLoginFailed = true;
+          
         }
       });
     }
