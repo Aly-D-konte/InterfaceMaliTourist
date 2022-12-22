@@ -24,10 +24,15 @@ export class RegionService {
     return this.http.get<Region[]>(`${this.liste}`);
   }
 
+  // //test
+  // getRegions() {
+  //   return this.http.get("http://localhost:8080/api/region/liste");
+  // }
+
 
   //afficher le detail d'un region
 
-  detailregion(id_regions: number): Observable<Region[]> {
+  detailregion(id_regions: any): Observable<Region[]> {
     
     return this.http.get<Region[]>(`${this.detail}/${id_regions}`)
   }
@@ -48,6 +53,7 @@ console.log("languemregion  "+ languemregion +     + "description: " + descripti
     data.append('description', description );
     data.append('file', file );
     console.log("my data : " +  data)
+    
     return this.http.post<Region>("http://localhost:8080/api/region/ajouterRegion", data)
   }
 }

@@ -1,57 +1,266 @@
-<div class="btn">
-  <a  data-bs-toggle="modal" href="#exampleModal" data-bs-whatever="@getbootstrap" class="btntu">Ajouter une région</a>
-</div>
+<!--Les regions du Mali-->
+<div class="container">
 
-
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-<div class="modal-dialog">
-<div class="modal-content">
-<div class="modal-header">
-<h5 class="modal-title" id="exampleModalLabel">Ajouter une Region</h5>
-<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-</div>
-<div class="modal-body">
-<form  (ngSubmit)="ajouerR()">
-  <div class="row justify-content-between text-left mb-3">
-      <div class="form-group col-sm-6 flex-column d-flex"> <label class="col-form-label">Code :</label> <input type="text" class="form-control" id="code"
-        name="code"
-        [(ngModel)]="region.coderegion"
-        > </div>
-      <div class="form-group col-sm-6 flex-column d-flex"> <label class="col-form-label">Nom :</label> <input type="text" class="form-control" id="nom"  name="code"
-        [(ngModel)]="region.nomregions"> </div>
+  <div class="entete">
+    <h2 class="text-center pt-4 ">Bienvenu dans le Dashboard MaliTourist</h2>
   </div>
-  <div class="row justify-content-between text-left mb-3">
-      <div class="form-group col-sm-6 flex-column d-flex"> <label class="col-form-label">Superficie :</label> <input type="text" class="form-control" id="superficie"  name="code"
-        [(ngModel)]="region.superficieregion"> </div>
-      <!-- <div class="form-group col-sm-6 flex-column d-flex"> <label class="col-form-label">Nombre d'Habitant :</label> <input type="text" class="form-control" id="habitant"  name="code"
-        [(ngModel)]="region.habitant"> </div> -->
+
+  <!--Debut --------------------------------------formulaire d'ajout d'une region-->
+
+  <div class="ajout">
+    <a
+      data-bs-toggle="modal"
+      href="#exampleModal"
+      data-bs-whatever="@getbootstrap"
+      class="btntu "
+      >Ajouter une région</a
+    >
   </div>
-  <div class="row justify-content-between text-left mb-3">
-      <div class="form-group col-sm-6 flex-column d-flex"> <label class="col-form-label">Domaine d'Activité :</label> <input type="text" class="form-control" id="activite"  name="code"
-        [(ngModel)]="region.activiterregion"> </div>
-      <div class="form-group col-sm-6 flex-column d-flex"> <label class="col-form-label">Langue Majoritaire :</label> <input type="text" class="form-control" id="Langue"  name="languemregion"
-        [(ngModel)]="region.languemregion"> </div>
+  
+  <div
+    class="modal fade"
+    id="exampleModal"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Ajouter une Region</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <form
+            *ngIf="!isLoggedIn"
+            name="form"
+            (ngSubmit)="f.form.valid && ajouerR()"
+            #f="ngForm"
+            novalidate
+          >
+            <div class="row justify-content-between text-left mb-3">
+              <div class="form-group col-sm-6 flex-column d-flex">
+                <label class="col-form-label">Code :</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="code"
+                  name="code"
+                  [(ngModel)]="region.coderegion"
+                  required
+                  #coderegion="ngModel"
+                  [ngClass]="{ 'is-invalid': f.submitted && coderegion.errors }"
+                />
+                <div
+                  *ngIf="coderegion.errors && f.submitted"
+                  class="invalid-feedback"
+                >
+                  Code region est obligatoire
+                </div>
+              </div>
+              <div class="form-group col-sm-6 flex-column d-flex">
+                <label class="col-form-label">Nom :</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="nom"
+                  name="nomregions"
+                  [(ngModel)]="region.nomregions"
+                  required
+                  #nomregions="ngModel"
+                  [ngClass]="{ 'is-invalid': f.submitted && nomregions.errors }"
+                />
+                <div
+                  *ngIf="coderegion.errors && f.submitted"
+                  class="invalid-feedback"
+                >
+                  Code region est obligatoire
+                </div>
+              </div>
+            </div>
+            <div class="row justify-content-between text-left mb-3">
+              <div class="form-group col-sm-6 flex-column d-flex">
+                <label class="col-form-label">Superficie :</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="superficie"
+                  name="superficieregion"
+                  [(ngModel)]="region.superficieregion"   required
+                  #superficieregion="ngModel"
+                  [ngClass]="{ 'is-invalid': f.submitted && superficieregion.errors }"
+                />
+                <div *ngIf="superficieregion.errors && f.submitted" class="invalid-feedback">
+                  Code region est obligatoire
+                  </div>
+              </div>
+              <!-- <div class="form-group col-sm-6 flex-column d-flex"> <label class="col-form-label">Nombre d'Habitant :</label> <input type="text" class="form-control" id="habitant"  name="code"
+          [(ngModel)]="region.habitant"> </div> -->
+            </div>
+            <div class="row justify-content-between text-left mb-3">
+              <div class="form-group col-sm-6 flex-column d-flex">
+                <label class="col-form-label">Domaine d'Activité :</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="activite"
+                  name="activiterregion"
+                  [(ngModel)]="region.activiterregion"
+                  required
+                  #activiterregion="ngModel"
+                  [ngClass]="{ 'is-invalid': f.submitted && activiterregion.errors }"
+                />
+                <div *ngIf="activiterregion.errors && f.submitted" class="invalid-feedback">
+                  Username is required!
+                  </div>
+              </div>
+              <div class="form-group col-sm-6 flex-column d-flex">
+                <label class="col-form-label">Langue Majoritaire :</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="Langue"
+                  name="languemregion"
+                  [(ngModel)]="region.languemregion"  required
+                  #languemregion="ngModel"
+                  [ngClass]="{ 'is-invalid': f.submitted && languemregion.errors }"
+                />
+              </div>
+              <div *ngIf="languemregion.errors && f.submitted" class="invalid-feedback">
+                Code region est obligatoire
+                </div>
+            </div>
+            <div class="mb-3">
+              <label for="recipient-name" class="col-form-label"
+                >Description :</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="description"
+                [(ngModel)]="region.description"
+                name="description"  required
+                #description="ngModel"
+                [ngClass]="{ 'is-invalid': f.submitted && description.errors }"
+              />
+            </div>
+            <div *ngIf="description.errors && f.submitted" class="invalid-feedback">
+              Code region est obligatoire
+              </div>
+            <div class="mb-3">
+              <input
+                type="file"
+                class="custom-file-input"
+                id="inputGroupFile01"
+                aria-describedby="inputGroupFileAddon01"
+                name="file"
+                formControlName="file"
+                (change)="fileChang($event)"
+                
+              />
+              <label class="custom-file-label" for="inputGroupFile01"
+                >Choisi une image</label
+              >
+            </div>
+            <button type="submit" class="btn btn-primary">Ajouter</button>
+            <button
+              type="button"
+              class="btn btn-secondary bt"
+              data-bs-dismiss="modal"
+            >
+              fermer
+            </button>
+          </form>
+        </div>
+        <div class="modal-footer"></div>
+      </div>
+    </div>
   </div>
-<div class="mb-3">
-  <label for="recipient-name" class="col-form-label">Description :</label>
-  <input type="text" class="form-control" id="description"  [(ngModel)]="region.description" name="description">
-</div>
-<div class="mb-3">
-  <input type="file" class="custom-file-input" id="inputGroupFile01"
-    aria-describedby="inputGroupFileAddon01" name="file" formControlName="file"  (change)="fileChang($event)">
-  <label class="custom-file-label" for="inputGroupFile01" >Choisi une image</label>
-</div>
-<button type="submit" class="btn btn-primary"  >Ajouter</button>
-<button type="button" class="btn btn-secondary bt" data-bs-dismiss="modal">fermer</button>
+<!---finnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn-->  
+  <div class="row">
+    <div class="col-12 col-md-3 ci">
+      <div class="row">
+        <div class="card">
+          <div class="images-sect">
+            
+          </div>
+          <h2 class="titre">Mali</h2>
+          <div class="para">
+            <img src="../assets/images/" alt="image de {{region.nomregions}}" class="images w-100">
 
-</form>
+            <p>
+            </p>
+          </div>
+          <div class="btn">
+            <a [routerLink]="['/pays']">Decouvrir</a>
+          </div>
+        </div>
+      </div>
+      
+    </div>
 
+    <div class="col-12 col-md-3 ci">
+      <div class="row">
+      <div class="card">
+       
+          <h2 class="titre">{{ allregion.nomregions }}</h2>
+          <div class="para">
+            <p>
+              {{ region.description }}
+            </p>
+          </div>
+          <div class="btn">
+            <a [routerLink]="['/detail', region.id_regions]">Decouvrir</a>
+          </div>
+        </div>
+      
+      </div>
+    </div>
+    <div class="col-12 col-md-3 ci">
+      <div class="card">
+        <div class="images-sect">
+          <img
+            src="../assets/images/"
+            alt="image de {{ region.nomregions }}"
+            class="images w-100"
+          />
+        </div>
+        <h2 class="titre">{{ region.nomregions }}</h2>
+        <div class="para">
+          <p>
+            {{ region.description }}
+          </p>
+        </div>
+        <div class="btn">
+          <a [routerLink]="['/detail', region.id_regions]">Decouvrir</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-3 ci">
+      <div class="card">
+        <div class="images-sect">
+          <img
+            src="../assets/images/"
+            alt="image de {{ region.nomregions }}"
+            class="images w-100"
+          />
+        </div>
+        <h2 class="titre">{{ region.nomregions }}</h2>
+        <div class="para">
+          <p>
+            {{ region.description }}
+          </p>
+        </div>
+        <div class="btn">
+          <a [routerLink]="['/detail', region.id_regions]">Decouvrir</a>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-<div class="modal-footer">
-</div>
-</div>
-</div>
-</div>
-
-
 
