@@ -29,7 +29,7 @@ export class UserService {
 
   //nombre des utilisateurs
 
-  getAllUser(){
-    return this.http.get(`http://localhost:8080/api/pays/utilisateur`)
+  getAllUser():Observable<any>{
+    return this.http.get("http://localhost:8080/api/pays/utilisateur")
   }
 }

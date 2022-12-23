@@ -135,7 +135,7 @@
 
             <!-- <p *ngFor="let moi of regions">Je suis</p> -->
 
-            <form (ngSubmit)="ajoutcommentaire()">
+            <form >
               <div
                 class="card-footer py-3 border-0"
                 style="background-color: #f8f9fa"
@@ -169,7 +169,7 @@
                   <button type="submit" class="btn btn-primary btn-sm">
                     Commenter
                   </button>
-                  <button type="button" class="btn btn-outline-primary btn-sm">
+                  <button type="button" class="btn btn-outline-primary btn-sm" (click)="ajoutcommentaire()">
                     Annuler
                   </button>
                 </div>

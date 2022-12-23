@@ -108,7 +108,12 @@ export class DashboardComponent implements OnInit {
     })
 
     this.userService.getAllUser().subscribe(data=>{
-      this.utilisateurs = data 
+      console.log("tttttttttttttttttttt", data)
+
+      this.utilisateurs = data ;
+
+      console.log("tttttttttttttttttttt", data)
+
     })
 
     
