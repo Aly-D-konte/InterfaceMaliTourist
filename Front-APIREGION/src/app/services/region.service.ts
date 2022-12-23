@@ -43,7 +43,7 @@ export class RegionService {
 
   //methode permettant d'ajouter une region
   ajouterregion(nomregions:any, coderegion: any, activiterregion: any, superficieregion:any, languemregion:any, description :any, file :any): Observable<any>{
-console.log("languemregion  "+ languemregion +     + "description: " + description)
+console.log("languemregion : " + languemregion + " "    + "description: " + description)
     const data:FormData = new FormData()
     data.append('nomregions', nomregions );
     data.append('coderegion', coderegion );

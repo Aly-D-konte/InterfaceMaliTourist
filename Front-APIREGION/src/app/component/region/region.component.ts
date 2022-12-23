@@ -11,7 +11,6 @@ export class RegionComponent implements OnInit {
 
 
   liste : any;
-
   regions : any;
   images:string = "assets/images";
   constructor(private serviceregion: RegionService, private router : Router) { }

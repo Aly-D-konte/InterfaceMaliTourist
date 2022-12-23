@@ -80,7 +80,7 @@ export class DashboardComponent implements OnInit {
 
 
 
-    //recuperation du total du reseau
+    //recuperation du total du region
 
     this.regionService.getAll().subscribe(data=>{
       this.allregion =data;
@@ -125,7 +125,7 @@ export class DashboardComponent implements OnInit {
 
   ajouerR() {
     Swal.fire({
-      title: 'Voul?',
+      title: 'Voulez-vous ajouter cette region?',
       showDenyButton: true,
       showCancelButton: true,
       confirmButtonText: 'Save',
@@ -145,7 +145,7 @@ export class DashboardComponent implements OnInit {
             this.file
           )
           .subscribe((data) => {
-            // console.log("ajout de la region" + this.region)
+            console.log("ajouttttttttttttttttttttttttttttttttttttttttt de la region" + this.region)
             this.region = data;
             console.log('ajout de la region' + this.region);
           });
