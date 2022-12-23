@@ -11,6 +11,8 @@ import { RegionService } from '../services/region.service';
   styleUrls: ['./dashboard.component.css'],
 })
 export class DashboardComponent implements OnInit {
+
+  
   form: any = {
     nomregions: null,
     coderegion: null,
