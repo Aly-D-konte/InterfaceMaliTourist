@@ -20,13 +20,16 @@ export class ConnexionComponent implements OnInit {
     isLoginFailed = false;
     errorMessage = '';
     roles: string[] = [];
+    username:any
   
     constructor(private authService: AuthService, private storageService: StorageService, private route: Router) { }
   
     ngOnInit(): void {
       if (this.storageService.isLoggedIn()) {
         this.isLoggedIn = true;
-        this.roles = this.storageService.getUser().roles;
+       // this.roles = this.storageService.getUser().roles;
+        this.username = this.storageService.getUser().username;
+       
       }
     }
   

@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import Swal from 'sweetalert2';
 import { Region } from '../models/region.model';
 import { UserService } from '../services/authentification/utilisateur.service';
+import { PaysService } from '../services/pays.service';
 import { RegionService } from '../services/region.service';
 
 @Component({
@@ -12,6 +13,10 @@ import { RegionService } from '../services/region.service';
 })
 export class DashboardComponent implements OnInit {
 
+
+  regionsliste:any
+  pays:any
+  utilisateurs:any
   
   form: any = {
     nomregions: null,
@@ -47,7 +52,9 @@ export class DashboardComponent implements OnInit {
   constructor(
     private userService: UserService,
     private regionService: RegionService,
-    private formB: FormBuilder
+    private formB: FormBuilder,
+    private servicepays: PaysService,
+   
   ) {}
 
   ngOnInit(): void {
@@ -80,6 +87,31 @@ export class DashboardComponent implements OnInit {
 
       console.log("possssssssssssssssssssssssssss" + this.allregion)
     })
+
+
+    //methode pour retourner toutes les regions
+    console.log('fffffffffffffffffff:çççççççç');
+    this.regionService.getAll().subscribe(data=>{
+      this.regionsliste = data;
+      console.log('fffffffffffffffffff:', data);
+      
+      // console.log("La langue "+this.regions[0].languemregion);
+      console.log(data);
+    })
+
+
+     // afficher toutes les pays
+
+     this.servicepays.getAll().subscribe(data=>{
+      this.pays = data
+      console.log("Afficher la  " +this.pays);
+    })
+
+    this.userService.getAllUser().subscribe(data=>{
+      this.utilisateurs = data 
+    })
+
+    
   }
 
   fileChang(event: any) {
@@ -119,5 +151,7 @@ export class DashboardComponent implements OnInit {
     });
   }
 
+
+  
 
 }

@@ -25,4 +25,11 @@ export class UserService {
   getAdminBoard(): Observable<any> {
     return this.http.get(API_URL + 'admin', { responseType: 'text' });
   }
+
+
+  //nombre des utilisateurs
+
+  getAllUser(){
+    return this.http.get(`http://localhost:8080/api/pays/utilisateur`)
+  }
 }

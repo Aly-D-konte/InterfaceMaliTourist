@@ -7,7 +7,7 @@
 
   <!--Debut --------------------------------------formulaire d'ajout d'une region-->
 
-  <div class="ajout">
+  <div class="ajout pt-4">
     <a
       data-bs-toggle="modal"
       href="#exampleModal"
@@ -182,85 +182,57 @@
     </div>
   </div>
 <!---finnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn-->  
-  <div class="row">
-    <div class="col-12 col-md-3 ci">
+  <div class="row pt-4">
+    <div class="col-12 col-md-4 ci">
       <div class="row">
         <div class="card">
           <div class="images-sect">
             
           </div>
-          <h2 class="titre">Mali</h2>
+          <h2 class="titre text-center">Nombre de pays</h2>
           <div class="para">
-            <img src="../assets/images/" alt="image de {{region.nomregions}}" class="images w-100">
-
+            
             <p>
+              {{pays.length}}
             </p>
           </div>
-          <div class="btn">
-            <a [routerLink]="['/pays']">Decouvrir</a>
-          </div>
+         
+        
         </div>
       </div>
       
     </div>
 
-    <div class="col-12 col-md-3 ci">
+    <div class="col-12 col-md-4 ci">
       <div class="row">
       <div class="card">
        
-          <h2 class="titre">{{ allregion.nomregions }}</h2>
+          <h2 class="titre text-center">Nombre de regions</h2>
           <div class="para">
-            <p>
-              {{ region.description }}
+            <p class="nombre text-center pt-4">
+              {{regionsliste.length}}
             </p>
           </div>
-          <div class="btn">
-            <a [routerLink]="['/detail', region.id_regions]">Decouvrir</a>
-          </div>
+          
         </div>
       
       </div>
     </div>
-    <div class="col-12 col-md-3 ci">
+    <div class="col-12 col-md-4 ci">
       <div class="card">
         <div class="images-sect">
-          <img
-            src="../assets/images/"
-            alt="image de {{ region.nomregions }}"
-            class="images w-100"
-          />
+        
         </div>
-        <h2 class="titre">{{ region.nomregions }}</h2>
+        <h2 class="titre text-center">Nombre d'utilisateurs</h2>
         <div class="para">
           <p>
-            {{ region.description }}
+            {{utilisateurs.length}}
           </p>
         </div>
-        <div class="btn">
-          <a [routerLink]="['/detail', region.id_regions]">Decouvrir</a>
-        </div>
+       
       </div>
     </div>
-    <div class="col-12 col-md-3 ci">
-      <div class="card">
-        <div class="images-sect">
-          <img
-            src="../assets/images/"
-            alt="image de {{ region.nomregions }}"
-            class="images w-100"
-          />
-        </div>
-        <h2 class="titre">{{ region.nomregions }}</h2>
-        <div class="para">
-          <p>
-            {{ region.description }}
-          </p>
-        </div>
-        <div class="btn">
-          <a [routerLink]="['/detail', region.id_regions]">Decouvrir</a>
-        </div>
-      </div>
-    </div>
+   
   </div>
 </div>
 

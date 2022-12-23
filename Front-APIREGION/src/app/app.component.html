@@ -19,8 +19,8 @@
       <ul class="navbar-nav mx-auto">
 
 
-        <li class="nav-item" >
-          <a href="/admin" class="nav-link" routerLink="/admin">Admin Board</a>
+        <li class="nav-item" *ngIf="isLoggedIn == true && Role == 'ROLE_ADMIN'">
+          <a href="/admin" class="nav-link" routerLink="/admin">Tableau de Bord</a>
         </li>
         
 
@@ -66,7 +66,7 @@
           <a href="/profile" class="nav-link" routerLink="profile">{{ username }}</a>
         </li>
         <li class="nav-item">
-          <a href class="nav-link" (click)="logout()">LogOut</a>
+          <a href class="nav-link" (click)="logout()">Deconnecter</a>
         </li>
       </ul>
     </div>
