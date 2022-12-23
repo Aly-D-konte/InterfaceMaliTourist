@@ -16,6 +16,7 @@ export class AppComponent {
   showAdminBoard = false;
   showModeratorBoard = false;
   username?: string;
+  Role!:any
 
   constructor(
     @Inject(PLATFORM_ID) private platformId: object,
@@ -29,12 +30,16 @@ export class AppComponent {
     if (this.isLoggedIn) {
       const user = this.storageService.getUser();
       this.roles = user.roles;
+      this.Role= this.roles;
 
       this.showAdminBoard = this.roles.includes('ROLE_ADMIN');
       this.showModeratorBoard = this.roles.includes('ROLE_MODERATOR');
 
       this.username = user.username;
     }
+
+  
+    
   }
 
   logout(): void {
